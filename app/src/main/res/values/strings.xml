@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Github User</string>
+    <string name="user_name">Username</string>
+    <string name="location">Location: Unknown</string>
+    <string name="company">Company: Unknown</string>
+    <string name="dummy_number">100000</string>
+    <string name="repository">Repository</string>
+    <string name="following">Following</string>
+    <string name="followers">Followers</string>
+    <string name="toolbar_title">User GitHub</string>
+    <string name="search">Enter Username</string>
+    <string name="link_github">https://github.com/</string>
+    <string name="suggestion">Suggestion for you</string>
+    <string name="not_found">User not found!</string>
+    <string name="disconnect">Please connect to the internet first</string>
+    <string name="to_connect">Connect</string>
+    <string name="to_cancel">Cancel</string>
+    <string name="localization">Localization</string>
+    <string name="back_button">Back Button</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="toggle_favorite">Toggle Favorite User</string>
+    <string name="share_button">Share Button</string>
+    <string name="to_detail_user">Go to Detail User Page</string>
+    <string name="data_not_found">Data not found!</string>
+    <string name="nothing_to_show">Nothing to show</string>
+</resources>
+
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Github User</string>
+    <string name="user_name">Username Pengguna</string>
+    <string name="location">Lokasi: Tidak diketahui</string>
+    <string name="company">Perusahaan: Tidak diketahui</string>
+    <string name="dummy_number">100000</string>
+    <string name="repository">Penyimpanan</string>
+    <string name="following">Mengikuti</string>
+    <string name="followers">Pengikut</string>
+    <string name="toolbar_title">Pengguna GitHub</string>
+    <string name="search">Masukkan Username</string>
+    <string name="link_github">https://github.com/</string>
+    <string name="suggestion">Saran pengguna untuk anda</string>
+    <string name="not_found">Pengguna tidak ditemukan!</string>
+    <string name="disconnect">Silahkan menghubungkan internet terlebih dahulu</string>
+    <string name="to_connect">Hubungkan</string>
+    <string name="to_cancel">Batal</string>
+    <string name="localization">Localisasi</string>
+    <string name="back_button">Tombol Kembali</string>
+    <string name="profile_picture">Foto Profil</string>
+    <string name="toggle_favorite">Tombol Pengguna Favorit</string>
+    <string name="share_button">Tombol Berbagi</string>
+    <string name="to_detail_user">Menuju ke Halaman Detail Pengguna</string>
+    <string name="data_not_found">Data tidak ditemukan!</string>
+    <string name="nothing_to_show">Tidak ada hasil yang ditampilkan</string>
+</resources>

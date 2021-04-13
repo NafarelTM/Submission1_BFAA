@@ -71,7 +71,12 @@ class FollowersFragment: Fragment(R.layout.fragment_follows) {
 
     private fun showSelectedUser(data: User) {
         val intent = Intent(context, ProfileActivity::class.java)
-        intent.putExtra(ProfileActivity.EXTRA_USER, data.username)
+        intent.apply {
+            putExtra(ProfileActivity.EXTRA_USER_ID, data.id)
+            putExtra(ProfileActivity.EXTRA_USER, data.username)
+            putExtra(ProfileActivity.EXTRA_USER_AVATAR, data.avatar)
+            putExtra(ProfileActivity.EXTRA_USER_LINK, data.githubLink)
+        }
         startActivity(intent)
     }
 

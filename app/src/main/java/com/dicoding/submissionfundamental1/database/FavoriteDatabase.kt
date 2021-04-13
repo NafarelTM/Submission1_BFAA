@@ -1,4 +1,4 @@
-package com.dicoding.submissionfundamental1
+package com.dicoding.submissionfundamental1.database
 
 import android.content.Context
 import androidx.room.Database

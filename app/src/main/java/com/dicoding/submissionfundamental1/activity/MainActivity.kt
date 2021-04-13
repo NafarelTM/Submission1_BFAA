@@ -73,9 +73,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.setting_menu) {
-            val mIntent = Intent(Settings.ACTION_LOCALE_SETTINGS)
-            startActivity(mIntent)
+        when (item.itemId) {
+            R.id.favorite_menu -> {
+                val favIntent = Intent(this, FavoriteActivity::class.java)
+                startActivity(favIntent)
+            }
+
+            R.id.setting_menu -> {
+                val mIntent = Intent(Settings.ACTION_LOCALE_SETTINGS)
+                startActivity(mIntent)
+            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -152,8 +159,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun showSelectedUser(user: User) {
         val intent = Intent(this, ProfileActivity::class.java)
-        intent.putExtra(ProfileActivity.EXTRA_USER_ID, user.id)
-        intent.putExtra(ProfileActivity.EXTRA_USER, user.username)
+        intent.apply {
+            putExtra(ProfileActivity.EXTRA_USER_ID, user.id)
+            putExtra(ProfileActivity.EXTRA_USER, user.username)
+            putExtra(ProfileActivity.EXTRA_USER_AVATAR, user.avatar)
+            putExtra(ProfileActivity.EXTRA_USER_LINK, user.githubLink)
+        }
         startActivity(intent)
     }
 }

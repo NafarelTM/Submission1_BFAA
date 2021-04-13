@@ -1,4 +1,4 @@
-package com.dicoding.submissionfundamental1
+package com.dicoding.submissionfundamental1.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
@@ -14,7 +14,7 @@ interface UserFavoriteDao {
     fun queryAllFav(): LiveData<List<UserFavorite>>
 
     @Query("SELECT count(*) FROM user_favorite WHERE id = :id")
-    suspend fun checkFav(id: Int): Int
+    suspend fun countFav(id: Int): Int
 
     @Query("DELETE FROM user_favorite WHERE id = :id")
     suspend fun deleteFav(id: Int): Int

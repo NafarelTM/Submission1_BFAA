@@ -33,6 +33,7 @@ class FollowersViewModel: ViewModel() {
                     for (i in 0 until response.length()) {
                         val dataObject = response.getJSONObject(i)
                         val user = User()
+                        user.id = dataObject.getInt("id")
                         user.username = dataObject.getString("login")
                         user.avatar = dataObject.getString("avatar_url")
                         user.githubLink = dataObject.getString("html_url")

@@ -5,10 +5,10 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.dicoding.submissionfundamental1.FavoriteDatabase
+import com.dicoding.submissionfundamental1.database.FavoriteDatabase
 import com.dicoding.submissionfundamental1.User
-import com.dicoding.submissionfundamental1.UserFavorite
-import com.dicoding.submissionfundamental1.UserFavoriteDao
+import com.dicoding.submissionfundamental1.database.UserFavorite
+import com.dicoding.submissionfundamental1.database.UserFavoriteDao
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
@@ -72,11 +72,11 @@ class ProfileViewModel(application: Application): AndroidViewModel(application) 
         return listLiveData
     }
 
-    suspend fun checkFav(id: Int) = favoriteDao?.checkFav(id)
+    suspend fun countFav(id: Int) = favoriteDao?.countFav(id)
 
-    fun insertFav(id: Int, username: String){
+    fun insertFav(id: Int, username: String, avatar: String, githubLink: String){
         CoroutineScope(Dispatchers.IO).launch {
-            var user = UserFavorite(id, username)
+            val user = UserFavorite(id, username, avatar, githubLink)
             favoriteDao?.insertFav(user)
         }
     }

@@ -19,10 +19,13 @@
     <string name="back_button">Back Button</string>
     <string name="profile_picture">Profile Picture</string>
     <string name="toggle_favorite">Toggle Favorite User</string>
-    <string name="share_button">Share Button</string>
     <string name="to_detail_user">Go to Detail User Page</string>
     <string name="data_not_found">Data not found!</string>
     <string name="nothing_to_show">Nothing to show</string>
+    <string name="favorite_checked">Favorite</string>
+    <string name="favorite_unchecked">Unfavorite</string>
+    <string name="toolbar_favorite">User Favorite</string>
+    <string name="no_favorite_user">No favorite user</string>
 </resources>
 
 

@@ -20,8 +20,11 @@
     <string name="back_button">Tombol Kembali</string>
     <string name="profile_picture">Foto Profil</string>
     <string name="toggle_favorite">Tombol Pengguna Favorit</string>
-    <string name="share_button">Tombol Berbagi</string>
     <string name="to_detail_user">Menuju ke Halaman Detail Pengguna</string>
     <string name="data_not_found">Data tidak ditemukan!</string>
     <string name="nothing_to_show">Tidak ada hasil yang ditampilkan</string>
+    <string name="favorite_checked">Favorit</string>
+    <string name="favorite_unchecked">Tidak favorit</string>
+    <string name="toolbar_favorite">Pengguna Favorit</string>
+    <string name="no_favorite_user">Tidak ada pengguna favorit</string>
 </resources>

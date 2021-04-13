@@ -8,6 +8,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.provider.Settings
+import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +20,10 @@ import com.dicoding.submissionfundamental1.adapter.SectionPagerAdapter
 import com.dicoding.submissionfundamental1.databinding.ActivityProfileBinding
 import com.dicoding.submissionfundamental1.viewmodel.ProfileViewModel
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.text.DecimalFormat
 import kotlin.math.floor
 import kotlin.math.log10
@@ -31,8 +36,10 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var viewModel: ProfileViewModel
 
     companion object{
-        const val EXTRA_USER = "extra_user"
         const val EXTRA_USER_ID = "extra_user_id"
+        const val EXTRA_USER = "extra_user"
+        const val EXTRA_USER_AVATAR = "extra_user_avatar"
+        const val EXTRA_USER_LINK = "extra_user_link"
 
         @StringRes
         private val TAB_TITLE = intArrayOf(
@@ -48,10 +55,12 @@ class ProfileActivity : AppCompatActivity() {
 
         val userID = intent.getIntExtra(EXTRA_USER_ID, 0)
         val user = intent.getStringExtra(EXTRA_USER)
+        val avatar = intent.getStringExtra(EXTRA_USER_AVATAR)
+        val githubLink = intent.getStringExtra(EXTRA_USER_LINK)
         val mBundle = Bundle()
         mBundle.putString(EXTRA_USER, user)
 
-        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(ProfileViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
         viewModel.setUserProfile(user.toString())
         viewModel.getUserProfile().observe(this, { userList ->
             if (userList != null) {
@@ -67,14 +76,6 @@ class ProfileActivity : AppCompatActivity() {
                     txtLocation.text = userList.location?.let { checkNull(it) }
                     txtCompany.text = userList.company?.let { checkNull(it) }
                     txtLink.text = userList.githubLink
-
-                    btnShare.setOnClickListener {
-                        val share = Intent()
-                        share.action = Intent.ACTION_SEND
-                        share.type = "text/plain"
-                        share.putExtra(Intent.EXTRA_TEXT, "You have shared the profile of \"${userList.name}\"")
-                        startActivity(Intent.createChooser(share, "Share to"))
-                    }
                 }
             }
         })
@@ -94,6 +95,35 @@ class ProfileActivity : AppCompatActivity() {
             TabLayoutMediator(tabs, viewPager){ tab, position ->
                 tab.text = resources.getString(TAB_TITLE[position])
             }.attach()
+        }
+
+        var statusFav = false
+        CoroutineScope(Dispatchers.IO).launch {
+            val count = viewModel.countFav(userID)
+            withContext(Dispatchers.Main){
+                if(count != null){
+                    statusFav = if(count > 0){
+                        binding.btnFavorite.setImageResource(R.drawable.ic_filled_favorite)
+                        true
+                    } else{
+                        binding.btnFavorite.setImageResource(R.drawable.ic_border_favorite)
+                        false
+                    }
+                }
+            }
+        }
+
+        binding.btnFavorite.setOnClickListener{
+            statusFav = !statusFav
+            if(statusFav){
+                viewModel.insertFav(userID, user.toString(), avatar.toString(), githubLink.toString())
+                binding.btnFavorite.setImageResource(R.drawable.ic_filled_favorite)
+                Toast.makeText(this, R.string.favorite_checked, Toast.LENGTH_SHORT).show()
+            } else{
+                viewModel.deleteFav(userID)
+                binding.btnFavorite.setImageResource(R.drawable.ic_border_favorite)
+                Toast.makeText(this, R.string.favorite_unchecked, Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

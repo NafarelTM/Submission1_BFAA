@@ -44,21 +44,6 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <ToggleButton
-        android:id="@+id/btn_favorite"
-        android:layout_width="38dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/toggle_favorite"
-        android:textOn=""
-        android:textOff=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/toggle_favorite"/>
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_avatar"
         android:layout_width="100dp"
@@ -225,7 +210,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tabs"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_share"
+        android:id="@+id/btn_favorite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -233,10 +218,10 @@
         android:clickable="true"
         android:focusable="true"
         app:borderWidth="0dp"
-        android:backgroundTint="@color/colorSecondaryVariant"
+        android:backgroundTint="@color/colorSecondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_action_share"
-        android:contentDescription="@string/share_button"/>
+        android:contentDescription="@string/toggle_favorite"
+        tools:src="@drawable/ic_border_favorite"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

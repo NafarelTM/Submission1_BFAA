@@ -1,4 +1,4 @@
-package com.dicoding.submissionfundamental1
+package com.dicoding.submissionfundamental1.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -8,5 +8,7 @@ import java.io.Serializable
 data class UserFavorite(
     @PrimaryKey
     val id: Int,
-    val username: String
+    val username: String,
+    val avatar: String,
+    val github_link: String
 ) : Serializable

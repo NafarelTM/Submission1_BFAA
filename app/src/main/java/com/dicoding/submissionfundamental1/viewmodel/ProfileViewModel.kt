@@ -76,7 +76,7 @@ class ProfileViewModel(application: Application): AndroidViewModel(application) 
 
     fun insertFav(id: Int, username: String){
         CoroutineScope(Dispatchers.IO).launch {
-            val user = UserFavorite(id, username)
+            var user = UserFavorite(id, username)
             favoriteDao?.insertFav(user)
         }
     }

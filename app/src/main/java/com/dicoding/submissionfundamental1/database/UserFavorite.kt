@@ -6,8 +6,7 @@ import java.io.Serializable
 
 @Entity(tableName = "user_favorite")
 data class UserFavorite(
-    @PrimaryKey
-    val id: Int,
+    @PrimaryKey val id: Int,
     val username: String,
     val avatar: String,
     val github_link: String

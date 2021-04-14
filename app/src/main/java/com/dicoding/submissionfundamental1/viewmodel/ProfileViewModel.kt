@@ -81,9 +81,16 @@ class ProfileViewModel(application: Application): AndroidViewModel(application) 
         }
     }
 
-    fun deleteFav(id: Int){
+    fun deleteFav(id: Int, username: String, avatar: String, githubLink: String){
         CoroutineScope(Dispatchers.IO).launch {
-            favoriteDao?.deleteFav(id)
+            val user = UserFavorite(id, username, avatar, githubLink)
+            favoriteDao?.deleteFav(user)
         }
     }
+
+//    fun deleteFav(id: Int){
+//        CoroutineScope(Dispatchers.IO).launch {
+//            favoriteDao?.deleteFav(id)
+//        }
+//    }
 }

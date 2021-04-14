@@ -12,7 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SubmissionFundamental1">
-        <activity android:name=".activity.FavoriteActivity"></activity>
+        <receiver
+            android:name=".AlarmReceiver"
+            android:enabled="true"
+            android:exported="true"/>
+
+        <activity android:name=".activity.SettingsActivity" />
         <activity
             android:name=".activity.SplashScreenActivity"
             android:screenOrientation="portrait">
@@ -26,6 +31,7 @@
         <activity
             android:name=".activity.ProfileActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".activity.FavoriteActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

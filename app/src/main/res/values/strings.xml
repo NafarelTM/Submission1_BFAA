@@ -26,6 +26,13 @@
     <string name="favorite_unchecked">Unfavorite</string>
     <string name="toolbar_favorite">User Favorite</string>
     <string name="no_favorite_user">No favorite user</string>
+    <string name="settings">Settings</string>
+    <string name="reminder">Reminder at 09:00 AM</string>
+    <string name="icon_reminder">Reminder</string>
+    <string name="change_language">Change language</string>
+    <string name="notification_reminder">It\'s time to find your favorite Github user!</string>
+    <string name="reminder_on">Alarm Reminder ON</string>
+    <string name="reminder_off">Alarm Reminder OFF</string>
 </resources>
 
 

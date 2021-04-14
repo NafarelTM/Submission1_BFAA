@@ -80,8 +80,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.setting_menu -> {
-                val mIntent = Intent(Settings.ACTION_LOCALE_SETTINGS)
-                startActivity(mIntent)
+                val settingIntent = Intent(this, SettingsActivity::class.java)
+                startActivity(settingIntent)
             }
         }
         return super.onOptionsItemSelected(item)

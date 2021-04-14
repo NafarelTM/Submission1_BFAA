@@ -27,4 +27,11 @@
     <string name="favorite_unchecked">Tidak favorit</string>
     <string name="toolbar_favorite">Pengguna Favorit</string>
     <string name="no_favorite_user">Tidak ada pengguna favorit</string>
+    <string name="settings">Pengaturan</string>
+    <string name="reminder">Pengingat pukul 09:00 pagi</string>
+    <string name="icon_reminder">Pengingat</string>
+    <string name="change_language">Ubah bahasa</string>
+    <string name="notification_reminder">Waktunya mencari pengguna Github favoritmu!</string>
+    <string name="reminder_on">Pengingat AKTIF</string>
+    <string name="reminder_off">Pengingat MATI</string>
 </resources>

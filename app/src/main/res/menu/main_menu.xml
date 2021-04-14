@@ -8,7 +8,7 @@
         android:title="@string/favorite_checked"/>
     <item
         android:id="@+id/setting_menu"
-        android:icon="@drawable/ic_localization"
+        android:icon="@drawable/ic_outline_settings_24"
         app:showAsAction="always"
         android:title="@string/localization"/>
 </menu>

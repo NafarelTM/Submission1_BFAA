@@ -8,6 +8,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
@@ -120,7 +121,7 @@ class ProfileActivity : AppCompatActivity() {
                 binding.btnFavorite.setImageResource(R.drawable.ic_filled_favorite)
                 Toast.makeText(this, R.string.favorite_checked, Toast.LENGTH_SHORT).show()
             } else{
-                viewModel.deleteFav(userID)
+                viewModel.deleteFav(userID, user.toString(), avatar.toString(), githubLink.toString())
                 binding.btnFavorite.setImageResource(R.drawable.ic_border_favorite)
                 Toast.makeText(this, R.string.favorite_unchecked, Toast.LENGTH_SHORT).show()
             }

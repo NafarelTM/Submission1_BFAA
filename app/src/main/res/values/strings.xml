@@ -33,6 +33,8 @@
     <string name="notification_reminder">It\'s time to find your favorite Github user!</string>
     <string name="reminder_on">Alarm Reminder ON</string>
     <string name="reminder_off">Alarm Reminder OFF</string>
+    <string name="appwidget_text" translatable="false">EXAMPLE</string>
+    <string name="add_widget" translatable="false">Add widget</string>
 </resources>
 
 

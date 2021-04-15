@@ -6,8 +6,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.dicoding.submissionfundamental1.database.FavoriteDatabase
-import com.dicoding.submissionfundamental1.User
-import com.dicoding.submissionfundamental1.database.UserFavorite
+import com.dicoding.submissionfundamental1.model.User
+import com.dicoding.submissionfundamental1.model.UserFavorite
 import com.dicoding.submissionfundamental1.database.UserFavoriteDao
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
@@ -87,10 +87,4 @@ class ProfileViewModel(application: Application): AndroidViewModel(application) 
             favoriteDao?.deleteFav(user)
         }
     }
-
-//    fun deleteFav(id: Int){
-//        CoroutineScope(Dispatchers.IO).launch {
-//            favoriteDao?.deleteFav(id)
-//        }
-//    }
 }

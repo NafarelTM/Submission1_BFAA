@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.dicoding.submissionfundamental1.model.UserFavorite
 
 @Database(
     entities = [UserFavorite::class],

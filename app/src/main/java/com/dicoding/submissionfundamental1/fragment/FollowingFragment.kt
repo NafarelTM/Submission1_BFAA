@@ -16,7 +16,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.submissionfundamental1.R
-import com.dicoding.submissionfundamental1.User
+import com.dicoding.submissionfundamental1.model.User
 import com.dicoding.submissionfundamental1.activity.ProfileActivity
 import com.dicoding.submissionfundamental1.adapter.ListUserAdapter
 import com.dicoding.submissionfundamental1.databinding.FragmentFollowsBinding

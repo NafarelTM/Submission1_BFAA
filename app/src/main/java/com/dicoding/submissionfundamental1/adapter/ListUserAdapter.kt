@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.dicoding.submissionfundamental1.R
-import com.dicoding.submissionfundamental1.User
+import com.dicoding.submissionfundamental1.model.User
 import com.dicoding.submissionfundamental1.databinding.ItemListUserBinding
 
 

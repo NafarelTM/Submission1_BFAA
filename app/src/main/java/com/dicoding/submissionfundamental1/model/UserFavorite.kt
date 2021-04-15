@@ -1,4 +1,4 @@
-package com.dicoding.submissionfundamental1.database
+package com.dicoding.submissionfundamental1.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

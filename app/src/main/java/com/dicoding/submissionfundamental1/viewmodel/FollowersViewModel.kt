@@ -1,13 +1,12 @@
 package com.dicoding.submissionfundamental1.viewmodel
 
 import android.content.Context
-import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dicoding.submissionfundamental1.R
-import com.dicoding.submissionfundamental1.User
+import com.dicoding.submissionfundamental1.model.User
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.JsonHttpResponseHandler
 import cz.msebera.android.httpclient.Header

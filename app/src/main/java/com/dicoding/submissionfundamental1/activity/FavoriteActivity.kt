@@ -15,9 +15,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.submissionfundamental1.R
-import com.dicoding.submissionfundamental1.User
+import com.dicoding.submissionfundamental1.model.User
 import com.dicoding.submissionfundamental1.adapter.ListUserAdapter
-import com.dicoding.submissionfundamental1.database.UserFavorite
+import com.dicoding.submissionfundamental1.model.UserFavorite
 import com.dicoding.submissionfundamental1.databinding.ActivityFavoriteBinding
 import com.dicoding.submissionfundamental1.viewmodel.FavoriteViewModel
 
@@ -34,7 +34,7 @@ class FavoriteActivity : AppCompatActivity() {
 
         listAdapter = ListUserAdapter()
         listAdapter.notifyDataSetChanged()
-        binding?.apply {
+        binding.apply {
             rvFavorite.setHasFixedSize(true)
             val divider = DividerItemDecoration(rvFavorite.context, DividerItemDecoration.VERTICAL)
             rvFavorite.addItemDecoration(divider)
@@ -49,7 +49,7 @@ class FavoriteActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this).get(FavoriteViewModel::class.java)
         viewModel.getFavorite()?.observe(this, {
-            lateinit var listUser: ArrayList<User>
+            val listUser: ArrayList<User>
             if (it.isNotEmpty()) {
                 listUser = toArrayList(it)
                 listAdapter.setData(listUser)

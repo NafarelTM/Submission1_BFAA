@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
-import com.dicoding.submissionfundamental1.AlarmReceiver
+import com.dicoding.submissionfundamental1.receiver.AlarmReceiver
 import com.dicoding.submissionfundamental1.database.ReminderPreference
 import com.dicoding.submissionfundamental1.databinding.ActivitySettingsBinding
 

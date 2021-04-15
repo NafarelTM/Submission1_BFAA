@@ -1,4 +1,4 @@
-package com.dicoding.submissionfundamental1
+package com.dicoding.submissionfundamental1.receiver
 
 import android.app.AlarmManager
 import android.app.NotificationChannel
@@ -11,6 +11,7 @@ import android.media.RingtoneManager
 import android.os.Build
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
+import com.dicoding.submissionfundamental1.R
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
